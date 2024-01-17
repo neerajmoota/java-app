@@ -25,9 +25,21 @@ mvn clean test
 mvn package
 ```
 
-## Steps followed for the implementation:
+## Steps followed for the IAC implementation:
 
 - Created an role for terraform purpose
 - Configured credetials to provision infra.
 - uploaded the jar file into S3 Bucket
 - Written the code to deploy the infra
+- To initialise the terrraform, change the dir to terraform folder, then run the below
+```sh
+terrafrom init
+```
+- To run the plan
+```sh
+terrafrom plan -var-file="supermarket.tfvars"
+```
+- To apply the changes
+```sh
+terrafrom apply -var-file="supermarket.tfvars" -auto-approve
+```
